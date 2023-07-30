@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: monitoring-app
+spec:
+  selector:
+    app: monitoring-app
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80 # Expose port 80 on the Service
+    targetPort: 5000 # Point to port 5000 inside the Pod
+  type: NodePort
